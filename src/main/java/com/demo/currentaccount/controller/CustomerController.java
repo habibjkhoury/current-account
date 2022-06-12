@@ -5,6 +5,7 @@ import com.demo.currentaccount.service.CustomerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,5 +21,11 @@ public class CustomerController {
     @GetMapping("/{id}")
     public ResponseEntity<CustomerInquiryResponse> get(@PathVariable Long id) {
         return new ResponseEntity<>(customerService.getCustomerDetails(id), HttpStatus.OK);
+    }
+
+    @GetMapping("/view/{id}")
+    public String  view(Model model, @PathVariable Long id) {
+        model.addAttribute("customer", customerService.getCustomerDetails(id));
+        return "customer";
     }
 }
