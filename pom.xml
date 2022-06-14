@@ -145,7 +145,7 @@
 
     <profiles>
         <profile>
-            <id>heroku-prod</id>
+            <id>unit-test</id>
             <build>
                 <plugins>
                     <plugin>
