@@ -35,7 +35,7 @@ public class AccountService {
         account = accountRepository.save(account);
 
         InitiateTransactionResponse transactionResponse = InitiateTransactionResponse.builder().status(TransactionStatus.PENDING).build();
-        if(request.getInitialCredit().compareTo(BigDecimal.ZERO) > 0) {
+        if(request.getInitialCredit() != null && BigDecimal.ZERO.compareTo(request.getInitialCredit()) < 0) {
             transactionResponse = transactionService.initiate(account, request.getInitialCredit());
         }
 

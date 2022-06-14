@@ -1,23 +1,21 @@
 package com.demo.currentaccount.transactions.service;
 
+import com.demo.currentaccount.BaseTest;
 import com.demo.currentaccount.dto.response.InitiateTransactionResponse;
 import com.demo.currentaccount.entity.Account;
 import com.demo.currentaccount.entity.Transaction;
 import com.demo.currentaccount.enums.TransactionStatus;
 import com.demo.currentaccount.repository.TransactionRepository;
 import com.demo.currentaccount.service.TransactionService;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.math.BigDecimal;
 
-@RunWith(MockitoJUnitRunner.class)
-public class TransactionServiceTest {
+public class TransactionServiceTest extends BaseTest {
 
     @Mock
     TransactionRepository transactionRepository;
