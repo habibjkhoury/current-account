@@ -21,7 +21,7 @@ jobs:
         run: mvn --batch-mode -DskipTests package
 
       - name: Test
-        run: mvn --batch-mode -Dmaven.test.failure.ignore=false test
+        run: mvn --batch-mode clean test -Punit-test
 
       - name: Deploy to Heroku
         uses: AkhileshNS/heroku-deploy@v3.12.12

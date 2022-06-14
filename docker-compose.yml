@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  current-account:
+    image: current-account
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - /data/current-account
+    ports:
+      - "8080:8080"

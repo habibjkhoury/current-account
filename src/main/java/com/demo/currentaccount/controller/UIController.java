@@ -57,8 +57,7 @@ public class UIController {
 
     @GetMapping("/accounts/{id}")
     public String accountView(Model model, @PathVariable Long id){
-        CreateAccountRequest createAccountRequest = new CreateAccountRequest();
-        createAccountRequest.setCustomerId(id);
+        CreateAccountRequest createAccountRequest = CreateAccountRequest.builder().customerId(id).build();
         model.addAttribute("createAccountRequest", createAccountRequest);
         return "account";
     }
