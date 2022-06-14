@@ -38,7 +38,7 @@ if initial credit not 0 a new transaction will initiate and will be shown in the
 `/swagger-ui.html`
 
 - integration-testing using cucumber that can be executed using `mvn clean test` which will run unit and integration testing. Please note that the application should already be started locally for the integration tests to run.
-
+*For integration testing if application started on a port other than 8080 make sure to change the port in src/test/resources/application.properties
 *For the unit test run alone `mvn clean test -Punit-test` should be used*
 
 - the application can be started by runing the maven command `mvn spring-boot:run` or by running CurrentAccountApplication.class from an IDE
