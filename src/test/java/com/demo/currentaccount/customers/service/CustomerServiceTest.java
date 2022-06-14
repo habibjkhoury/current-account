@@ -1,22 +1,20 @@
 package com.demo.currentaccount.customers.service;
 
+import com.demo.currentaccount.BaseTest;
 import com.demo.currentaccount.entity.Customer;
 import com.demo.currentaccount.exception.CustomerNotFoundException;
 import com.demo.currentaccount.repository.CustomerRepository;
 import com.demo.currentaccount.service.CustomerService;
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.Optional;
 
-@RunWith(MockitoJUnitRunner.class)
-public class CustomerServiceTest {
+public class CustomerServiceTest extends BaseTest {
 
     @Mock
     CustomerRepository customerRepository;
@@ -24,10 +22,10 @@ public class CustomerServiceTest {
     @InjectMocks
     CustomerService customerService;
 
-    Customer customer;
+    static Customer customer;
 
-    @Before
-    public void setup(){
+    @BeforeAll
+    static void setup(){
         customer = Customer.builder()
                 .id(1L)
                 .build();
@@ -39,12 +37,13 @@ public class CustomerServiceTest {
 
         Customer customer1 = customerService.findCustomerById(1L);
 
-        Assert.assertNotNull(customer1.getId());
+        Assertions.assertNotNull(customer1.getId());
     }
 
-    @Test(expected = CustomerNotFoundException.class)
+    @Test
     public void findCustomerById_NonExistingCustomer_ShouldThrowExption(){
         Mockito.when(customerRepository.findById(1L)).thenReturn(Optional.empty());
-        customerService.findCustomerById(1L);
+        Assertions.assertThrows(CustomerNotFoundException.class, () -> customerService.findCustomerById(1L));
+
     }
 }
