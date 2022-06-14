@@ -17,7 +17,10 @@
       <form method="POST" th:action="@{/ui/v1/accounts}" th:object = "${createAccountRequest}">
         <input type="hidden" name="customerId" th:field = "*{customerId}"/>
         <div class="form-group">
-          <input type="text" name="initialCredit" th:field="*{initialCredit}" placeholder="Enter initial credit" style="text-align: center"/>
+          <label>
+            Initial Credit:
+            <input type="text" name="initialCredit" th:field="*{initialCredit}" placeholder="Enter initial credit" style="text-align: center"/>
+          </label>
         </div>
         <div class="box-footer">
         </div>
