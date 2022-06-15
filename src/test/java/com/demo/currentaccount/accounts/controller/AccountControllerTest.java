@@ -5,7 +5,7 @@ import com.demo.currentaccount.controller.AccountController;
 import com.demo.currentaccount.dto.request.CreateAccountRequest;
 import com.demo.currentaccount.dto.response.CreateAccountResponse;
 import com.demo.currentaccount.enums.AccountStatus;
-import com.demo.currentaccount.service.AccountService;
+import com.demo.currentaccount.service.impl.AccountServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -21,7 +21,7 @@ import org.springframework.http.ResponseEntity;
 public class AccountControllerTest extends BaseTest {
 
     @Mock
-    AccountService accountService;
+    AccountServiceImpl accountService;
 
     @InjectMocks
     AccountController accountController;

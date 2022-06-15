@@ -8,7 +8,7 @@ import com.demo.currentaccount.dto.response.CustomerInquiryResponse;
 import com.demo.currentaccount.entity.Account;
 import com.demo.currentaccount.entity.Customer;
 import com.demo.currentaccount.entity.Transaction;
-import com.demo.currentaccount.service.CustomerService;
+import com.demo.currentaccount.service.impl.CustomerServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ public class UIControllerTest extends BaseTest {
     AccountController accountController;
 
     @Mock
-    CustomerService customerService;
+    CustomerServiceImpl customerService;
 
     @Mock
     Model model;

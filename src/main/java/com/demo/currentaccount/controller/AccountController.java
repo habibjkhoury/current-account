@@ -3,8 +3,7 @@ package com.demo.currentaccount.controller;
 import com.demo.currentaccount.common.model.CustomerNotFoundResponse;
 import com.demo.currentaccount.dto.request.CreateAccountRequest;
 import com.demo.currentaccount.dto.response.CreateAccountResponse;
-import com.demo.currentaccount.service.AccountService;
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import com.demo.currentaccount.service.impl.AccountServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -30,7 +29,7 @@ import javax.validation.Valid;
 @Tag(name = "account", description = "Account API")
 public class AccountController {
 
-    private final AccountService accountService;
+    private final AccountServiceImpl accountService;
 
     @PostMapping
     @Operation(summary = "Create new account", description = "Create new account and initiate transaction if initial credit available")

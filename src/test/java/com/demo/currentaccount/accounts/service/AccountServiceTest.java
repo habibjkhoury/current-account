@@ -9,9 +9,9 @@ import com.demo.currentaccount.entity.Customer;
 import com.demo.currentaccount.enums.AccountStatus;
 import com.demo.currentaccount.enums.TransactionStatus;
 import com.demo.currentaccount.repository.AccountRepository;
-import com.demo.currentaccount.service.AccountService;
-import com.demo.currentaccount.service.CustomerService;
-import com.demo.currentaccount.service.TransactionService;
+import com.demo.currentaccount.service.impl.AccountServiceImpl;
+import com.demo.currentaccount.service.impl.CustomerServiceImpl;
+import com.demo.currentaccount.service.impl.TransactionServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -27,13 +27,13 @@ public class AccountServiceTest extends BaseTest {
     AccountRepository accountRepository;
 
     @Mock
-    CustomerService customerService;
+    CustomerServiceImpl customerService;
 
     @Mock
-    TransactionService transactionService;
+    TransactionServiceImpl transactionService;
 
     @InjectMocks
-    AccountService accountService;
+    AccountServiceImpl accountService;
 
     static Account account;
 
