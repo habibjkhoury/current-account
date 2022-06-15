@@ -9,6 +9,8 @@ import com.demo.currentaccount.enums.AccountStatus;
 import com.demo.currentaccount.enums.TransactionStatus;
 import com.demo.currentaccount.repository.AccountRepository;
 import com.demo.currentaccount.service.AccountService;
+import com.demo.currentaccount.service.CustomerService;
+import com.demo.currentaccount.service.TransactionService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -19,9 +21,9 @@ import java.math.BigDecimal;
 public class AccountServiceImpl implements AccountService {
 
     private final AccountRepository accountRepository;
-    private final CustomerServiceImpl customerService;
+    private final CustomerService customerService;
 
-    private final TransactionServiceImpl transactionService;
+    private final TransactionService transactionService;
 
     @Override
     public CreateAccountResponse create(CreateAccountRequest request) {
