@@ -2,7 +2,7 @@ package com.demo.currentaccount.controller;
 
 import com.demo.currentaccount.common.model.CustomerNotFoundResponse;
 import com.demo.currentaccount.dto.response.CustomerInquiryResponse;
-import com.demo.currentaccount.service.CustomerService;
+import com.demo.currentaccount.service.impl.CustomerServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.ArraySchema;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -14,7 +14,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,7 +23,7 @@ import org.springframework.web.bind.annotation.*;
 @Tag(name = "customer", description = "Customer API")
 public class CustomerController {
 
-    private final CustomerService customerService;
+    private final CustomerServiceImpl customerService;
 
     @GetMapping("/{id}")
     @Operation(summary = "Get Customer Details", description = "Get customer details: name, surname, accounts, and the transactions of the accounts")

@@ -4,8 +4,7 @@ import com.demo.currentaccount.dto.request.CreateAccountRequest;
 import com.demo.currentaccount.dto.response.CustomerInquiryResponse;
 import com.demo.currentaccount.entity.Customer;
 import com.demo.currentaccount.model.TransactionDetails;
-import com.demo.currentaccount.repository.CustomerRepository;
-import com.demo.currentaccount.service.CustomerService;
+import com.demo.currentaccount.service.impl.CustomerServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,7 +18,7 @@ import java.util.List;
 @RequestMapping("/ui/v1")
 public class UIController {
 
-    private final CustomerService customerService;
+    private final CustomerServiceImpl customerService;
 
     private final AccountController accountController;
 

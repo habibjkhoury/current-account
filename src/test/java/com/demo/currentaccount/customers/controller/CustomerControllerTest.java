@@ -3,7 +3,7 @@ package com.demo.currentaccount.customers.controller;
 import com.demo.currentaccount.BaseTest;
 import com.demo.currentaccount.controller.CustomerController;
 import com.demo.currentaccount.dto.response.CustomerInquiryResponse;
-import com.demo.currentaccount.service.CustomerService;
+import com.demo.currentaccount.service.impl.CustomerServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -15,7 +15,7 @@ import org.springframework.http.ResponseEntity;
 public class CustomerControllerTest extends BaseTest {
 
     @Mock
-    CustomerService customerService;
+    CustomerServiceImpl customerService;
 
     @InjectMocks
     CustomerController customerController;

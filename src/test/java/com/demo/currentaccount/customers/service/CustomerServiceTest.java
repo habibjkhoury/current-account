@@ -4,7 +4,7 @@ import com.demo.currentaccount.BaseTest;
 import com.demo.currentaccount.entity.Customer;
 import com.demo.currentaccount.exception.CustomerNotFoundException;
 import com.demo.currentaccount.repository.CustomerRepository;
-import com.demo.currentaccount.service.CustomerService;
+import com.demo.currentaccount.service.impl.CustomerServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,7 +20,7 @@ public class CustomerServiceTest extends BaseTest {
     CustomerRepository customerRepository;
 
     @InjectMocks
-    CustomerService customerService;
+    CustomerServiceImpl customerService;
 
     static Customer customer;
 

@@ -6,7 +6,7 @@ import com.demo.currentaccount.entity.Account;
 import com.demo.currentaccount.entity.Transaction;
 import com.demo.currentaccount.enums.TransactionStatus;
 import com.demo.currentaccount.repository.TransactionRepository;
-import com.demo.currentaccount.service.TransactionService;
+import com.demo.currentaccount.service.impl.TransactionServiceImpl;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -21,7 +21,7 @@ public class TransactionServiceTest extends BaseTest {
     TransactionRepository transactionRepository;
 
     @InjectMocks
-    TransactionService transactionService;
+    TransactionServiceImpl transactionService;
 
     @Test
     public void initiateTransaction_ValidAmount_ShouldReturnApproved(){
